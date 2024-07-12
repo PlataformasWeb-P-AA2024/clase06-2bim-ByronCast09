@@ -77,7 +77,7 @@ ROOT_URLCONF = 'proyectoUno.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [], # por defecto busca una carpeta llamada template en cada app
+        'DIRS': [os.path.join(BASE_DIR,'templates')], # por defecto busca una carpeta llamada template en cada app
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,9 +151,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # agregar apps para Auth - paso 4
 LOGIN_REDIRECT_URL = reverse_lazy('index')
+SITE_ID=3
 
 # agregar información para
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+#SOCIALACCOUNT_PROVIDERS = {
+ #   'github': {
+  #      'SCOPE': ['user'],
+   #     'CLIENT_ID': 'Ov23lig2d5Lz6DEzZ6my',
+    #    'SECRET': '27dae613405d3fc90bed683472272336dbc29a92',
+     #   'LOGIN_URL': 'http://127.0.0.1:8000/accounts/github/login/callback/',
+      #  'SIGNUP': True,
+    #}
+#}

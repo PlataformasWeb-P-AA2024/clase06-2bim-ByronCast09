@@ -2,7 +2,7 @@
     Manejo de urls para la aplicación
     administrativo
 """
-from django.urls import path
+from django.urls import path,include
 # se importa las vistas de la aplicación
 from . import views
 
@@ -27,4 +27,5 @@ urlpatterns = [
             name='crear_numero_telefonico_estudiante'),
         path('saliendo/logout/', views.logout_view, name="logout_view"),
         path('entrando/login/', views.ingreso, name="login"),
+        
  ]

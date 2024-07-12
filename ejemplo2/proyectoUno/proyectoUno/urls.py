@@ -38,5 +38,5 @@ urlpatterns = [
     # http://127.0.0.1:8000/api/numerosts
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-
+    path('accounts/', include('allauth.urls')),
 ]
